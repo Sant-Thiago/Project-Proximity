@@ -18,6 +18,8 @@ const double percent = calcPercent();
 float duration, distance;
 int brilho = 0;
 
+// clojure
+
 void reduce(int pinLed, double percent) {
   if (brilho > percent) {
     brilho = brilho - 15;
