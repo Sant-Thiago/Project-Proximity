@@ -1,38 +1,15 @@
 #include <Arduino.h>
-// #include "MyLEDControl.h"
+#include "LEDControl.h"
 
-const int TRIG_PIN = 10; 
-const int ECHO_PIN = 9;
-const int LED_PIN = 3;
+ 
 
-const int MAX_BRIGHTNESS = 255;
-const double MIN_PERCENTAGE = 8.0; 
+// pulseIn(echoPin, HIGH);
 
-float duration = 0.0; pulseIn(echoPin, HIGH);
+float duration = 0.0;
 float distance = 0.0; (duration * 0.0343) / 2;
-int brightness = 0;
-
-double calcPercent() {
-  return (MAX_BRIGHTNESS * MIN_PERCENTAGE) / 100.0;
-}
-
-
-void reduceBrightness(int pinLed, double targetPercent) {
-  int targetBrightness = static_cast<int>(targetPercent);
-
-  if (brightness > targetBrightness) {
-    brightness--;
-    analogWrite(pinLed, brightness);
-    delay(1000);
-  }
-}
 
 void increaseBrigthness(int pinLed) {
-  if (brightness < MAX_BRIGHTNESS) {
-    brightness++;
-    analogWrite(pinLed, brightness);
-    delayMicroseconds(1000);
-  }
+  
 }
 
 

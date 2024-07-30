@@ -13,9 +13,9 @@ extern const int LED_PIN;
 double calculateMinBrightnessPercent();
 
 // Função para reduzir o brilho do LED
-void reduceBrightness(int pinLed, double targetPercent);
+void reduceBrightness(double targetPercent);
 
 // Função para aumentar o brilho do LED
-void increaseBrightness(int pinLed);
+void increaseBrightness();
 
 #endif // LEDCONTROL_H
