@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "../src/LEDControl.h"
+#include "LEDControl.h"
 
 float duration = 0.0;
 float distance = 0.0;

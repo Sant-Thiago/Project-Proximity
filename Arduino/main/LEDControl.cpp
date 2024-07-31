@@ -1,5 +1,5 @@
-#include "LEDControl.h"
 #include <Arduino.h>
+#include "LEDControl.h"
 
 const int TRIG_PIN = 10; 
 const int ECHO_PIN = 9;
