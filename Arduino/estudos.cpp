@@ -6,6 +6,11 @@
 const int trigPin = 10; 
 const int echoPin = 9;
 
+// const são variaveis imutaveis
+// extern const indica para o compilador que essa const é definida em outro arquivo, permite compartilhar a mesma constante entre varios arquivos
+// static const define uma const que está limitada ao arquivo onde é definida, não podendo ser acessada em outros arquivos
+// #define não tem escopo limitado, define uma const simbolica que é substituida pelo pré-processador antes da compilação. Usado para criar macros( == var) e constantes simbolicas
+
 double calcPercent() {
   const int total = 255;
   const double percentTotal = 100;

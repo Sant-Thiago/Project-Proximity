@@ -1,5 +1,3 @@
-// LEDControl.cpp
-
 #include "LEDControl.h"
 #include <Arduino.h>
 
@@ -16,6 +14,10 @@ double calculateMinBrightnessPercent() {
     return (MAX_BRIGHTNESS * MIN_PERCENTAGE) / 100; 
 }
 
+double calculateMinBrightnessPercent(double wantedMinPercent) {
+    return (MAX_BRIGHTNESS * wantedMinPercent) / 100; 
+}
+
 void reduceBrightness(double targetPercent) {
     int targetBrightness = static_cast<int>(targetPercent);
 
@@ -30,6 +32,6 @@ void increaseBrightness() {
     if (BRIGHTNESS < MAX_BRIGHTNESS) {
         BRIGHTNESS++;
         analogWrite(LED_PIN, BRIGHTNESS);
-        delayMicroseconds(1000);
+        delay(10);
   }
 }

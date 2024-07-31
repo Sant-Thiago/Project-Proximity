@@ -1,17 +1,8 @@
 #include <Arduino.h>
-#include "LEDControl.h"
-
- 
-
-// pulseIn(echoPin, HIGH);
+#include "../src/LEDControl.h"
 
 float duration = 0.0;
-float distance = 0.0; (duration * 0.0343) / 2;
-
-void increaseBrigthness(int pinLed) {
-  
-}
-
+float distance = 0.0;
 
 // VaVa x ROLAND JONES - 凍京 // Molotov - A Oração feat. A-Ka
 void setup() {
@@ -24,8 +15,6 @@ void setup() {
 }
 
 void loop() {
-  float duration, distance;
-
   digitalWrite(TRIG_PIN, LOW);
   delayMicroseconds(2);
   
@@ -35,15 +24,22 @@ void loop() {
   digitalWrite(TRIG_PIN, LOW);
   
   duration = pulseIn(ECHO_PIN, HIGH);
+  
   distance = (duration * 0.0343) / 2;
 
-  double percent = calcPercent();
+  double percent;
+  // Verifica se há dados disponíveis para leitura
+  // if (Serial.available() > 0) {
+  //   double wishedPercent = Serial.parseFloat(); // Lê o valor enviado
+  // }
+    percent = calculateMinBrightnessPercent();
+
+  Serial.println("Valor recebido:: ");
+  Serial.println(percent);
 
   if (distance > 100) {
-    reduceBrightness(LED_PIN, percent);
+    reduceBrightness(percent);
   } else {
-    increaseBrigthness(LED_PIN);
+    increaseBrightness();
   }
-  
-  // Serial.println(brilho);
 }
