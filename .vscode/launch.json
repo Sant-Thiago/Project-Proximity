@@ -1,6 +1,13 @@
 {
     "configurations": [
         {
+            "type": "java",
+            "name": "BeckApplication",
+            "request": "launch",
+            "mainClass": "com.example.beck.BeckApplication",
+            "projectName": "beck"
+        },
+        {
             "name": "C/C++: g++.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",

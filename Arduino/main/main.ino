@@ -4,7 +4,7 @@
 float duration = 0.0;
 float distance = 0.0;
 
-// VaVa x ROLAND JONES - 凍京 // Molotov - A Oração feat. A-Ka
+// Molotov - A Oração feat. A-Ka
 void setup() {
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
@@ -29,10 +29,10 @@ void loop() {
 
   double percent;
   // Verifica se há dados disponíveis para leitura
-  // if (Serial.available() > 0) {
-  //   double wishedPercent = Serial.parseFloat(); // Lê o valor enviado
-  // }
-    percent = calculateMinBrightnessPercent();
+  if (Serial.available() > 0) {
+    double wishedPercent = Serial.parseFloat(); // Lê o valor enviado
+    percent = calculateMinBrightnessPercent(wishedPercent);
+  }
 
   Serial.println("Valor recebido:: ");
   Serial.println(percent);
