@@ -12,7 +12,7 @@ COPY entrypoint.sh /usr/src/app/entrypoint.sh
 
 RUN chmod +x /usr/src/app/entrypoint.sh
 
-EXPOSE 1433
+ENTRYPOINT ["/usr/src/apwp/entrypoint.sh"]
 
-CMD ["/usr/src/app/entrypoint.sh"]
+# CMD ["/usr/src/app/entrypoint.sh"]
 
