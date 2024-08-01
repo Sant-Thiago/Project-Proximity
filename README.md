@@ -1,6 +1,4 @@
-Entendi, então a aplicação Java não terá endpoints de API. Vou ajustar a documentação para refletir isso.
-
-# Arduino LED Control System
+# Project Proximity
 
 Este repositório contém uma aplicação que configura um Arduino para controlar um LED com base na detecção de movimento. O LED acende ao detectar movimento próximo e diminui gradualmente quando não há movimento, até uma porcentagem definida pelo usuário. A definição dessa porcentagem é feita em uma aplicação Java, com os dados sendo armazenados em um banco de dados MSSQL, em um contêiner Docker.
 
